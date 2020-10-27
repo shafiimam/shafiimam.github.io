@@ -1,0 +1,186 @@
+* {
+    margin: 0px 0px;
+    padding: 0px 0px;
+}
+
+body {
+    background-color: azure;
+}
+
+.navbar {
+    width: 100%;
+    background-color: white;
+    text-transform: capitalize;
+    padding: 12px 0px;
+    position: fixed;
+    top: 0;
+}
+
+.navbar li {
+    float: inline-start;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    margin: 0px 70px;
+    pad: 0 40px;
+    list-style-type: none;
+    display: inline-block;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: black;
+}
+
+.header {
+    width: 100%;
+    text-align: center;
+    background-image: url('../images/header.jpg');
+    background-size: cover;
+    padding: 200px 0;
+    color: azure;
+    font-size: 30px;
+    margin: 50px 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.banner {
+    filter: drop-shadow(1px 1px 1px black);
+    height: 200px;
+    width: 200px;
+    float: inline-end;
+}
+
+.introduction {
+    text-align: center;
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 20px 20px;
+}
+
+#popular-destination a {
+    text-decoration: none;
+    font-family: cursive !important;
+    color: aliceblue;
+}
+
+#popular-destination h2 {
+    color: black;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 24.5% 24.5% 24.5% 24.5%;
+    grid-template-rows: 250px 250px 250px;
+    column-gap: 10px;
+    row-gap: 10px;
+    padding: 10px 30px;
+}
+
+.grid-item-1 {
+    background-image: url('../images/cox\'s\ bazar.jpg');
+    background-size: cover;
+    grid-column: 1;
+    grid-row: 1;
+    border-radius: 5%;
+}
+
+.grid-item-2 {
+    background-image: url('../images/saint\ martin.jpg');
+    background-size: cover;
+    grid-column: 2;
+    grid-row: 1;
+    border-radius: 5%;
+}
+
+.grid-item-3 {
+    background-image: url('../images/bandarban.jpg');
+    background-size: cover;
+    grid-column: 3;
+    grid-row: 1;
+    border-radius: 5%;
+}
+
+.grid-item-4 {
+    background-image: url('../images/rangamati.jpg');
+    background-size: cover;
+    grid-column: 4;
+    grid-row: 1;
+    border-radius: 5%;
+}
+
+.grid-item-5 {
+    background-image: url('../images/khagrachari.jpg');
+    background-size: cover;
+    grid-column: 1;
+    grid-row: 2;
+    border-radius: 5%;
+}
+
+.grid-item-6 {
+    background-image: url('../images/sylhet.jpg');
+    background-size: cover;
+    grid-column: 2;
+    grid-row: 2;
+    border-radius: 5%;
+}
+
+.grid-item-7 {
+    background-image: url('../images/sunamganj.jpg');
+    background-size: cover;
+    grid-column: 3;
+    grid-row: 2;
+    border-radius: 5%;
+}
+
+.grid-item-8 {
+    background-image: url('../images/sundarban.jpg');
+    background-size: cover;
+    grid-column: 4;
+    grid-row: 2;
+    border-radius: 5%;
+}
+
+.grid-item-9 {
+    background-image: url('../images/sundarban.jpg');
+    background-size: cover;
+    grid-column: 1;
+    grid-row: 3;
+    border-radius: 5%;
+}
+
+.grid-item-10 {
+    background-image: url('../images/sajek.jpg');
+    background-size: cover;
+    grid-column: 2;
+    grid-row: 3;
+    border-radius: 5%;
+}
+
+.grid-item-11 {
+    background-image: url('../images/boga\ lake.jpg');
+    background-size: cover;
+    grid-column: 3;
+    grid-row: 3;
+    border-radius: 5%;
+}
+
+.grid-item-12 {
+    background-image: url('../images/sreemangal.jpg');
+    background-size: cover;
+    grid-column: 4;
+    grid-row: 3;
+    border-radius: 5%;
+}
+
+.footer {
+    text-align: center;
+}
+
+.text_emp {
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    margin-bottom: 40px;
+}
