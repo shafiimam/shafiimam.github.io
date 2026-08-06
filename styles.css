@@ -140,6 +140,7 @@ body > *:not(#shader):not(.grain):not(.loader):not(.cursor) { position: relative
 .marquee__track--logos { gap: clamp(2.5rem, 5vw, 5rem); }
 .clogo { height: clamp(24px, 2.6vw, 34px); width: auto; flex: 0 0 auto; object-fit: contain; filter: brightness(0); opacity: 0.48; transition: opacity 0.3s var(--ease); }
 .clogo:hover { opacity: 0.85; }
+.clogo--mark { height: clamp(30px, 3.4vw, 44px); }
 @keyframes scroll-x { to { transform: translateX(-50%); } }
 
 /* =========================================================
