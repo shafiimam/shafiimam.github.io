@@ -163,7 +163,7 @@ body > *:not(#shader):not(.grain):not(.loader):not(.cursor) { position: relative
    WORK / CASE STUDIES
    ========================================================= */
 .work { max-width: var(--maxw); margin: 0 auto; padding: var(--section-y) var(--pad-x); }
-.case { position: sticky; display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1.5rem, 4vw, 4rem); align-items: center; background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: clamp(1.5rem, 3.5vw, 3rem); box-shadow: 0 -6px 50px -28px rgba(17,17,16,0.5); margin-bottom: clamp(1.5rem, 3vw, 2.5rem); }
+.case { position: sticky; display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1.5rem, 4vw, 4rem); align-items: center; background: var(--bg); border: 1px solid var(--line-2); border-radius: 20px; padding: clamp(1.5rem, 3.5vw, 3rem); margin-bottom: clamp(1.5rem, 3vw, 2.5rem); }
 article.case:nth-of-type(1) { top: 90px; }
 article.case:nth-of-type(2) { top: 108px; }
 article.case:nth-of-type(3) { top: 126px; }
