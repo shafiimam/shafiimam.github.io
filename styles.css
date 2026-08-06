@@ -223,9 +223,10 @@ article.case:nth-of-type(3) { top: 126px; }
 /* =========================================================
    DOTFIELD (interactive Services header)
    ========================================================= */
-.dotfield { position: relative; overflow: hidden; margin-bottom: clamp(2rem, 4vw, 3.5rem); padding: clamp(2rem, 5vw, 4rem) 0; min-height: clamp(200px, 30vh, 340px); display: flex; flex-direction: column; justify-content: center; }
+.dotfield { position: relative; width: 100vw; margin-left: 50%; transform: translateX(-50%); overflow: hidden; border-block: 1px solid var(--line); margin-bottom: clamp(2.5rem, 5vw, 4rem); padding: clamp(3rem, 6vw, 6rem) var(--pad-x); min-height: clamp(240px, 36vh, 400px); display: flex; flex-direction: column; justify-content: center; }
 .dotfield__canvas { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 2; pointer-events: none; }
 .dotfield > :not(.dotfield__canvas) { position: relative; z-index: 1; }
+.dotfield__inner { max-width: var(--maxw); margin: 0 auto; width: 100%; }
 .dotfield__title { font-family: var(--sans); font-weight: 600; font-size: clamp(3.5rem, 1rem + 13vw, 11rem); letter-spacing: -0.05em; line-height: 0.9; color: var(--ink); will-change: transform; }
 .dotfield__sub { color: var(--ink-soft); font-size: clamp(1rem, 1rem + 0.3vw, 1.2rem); max-width: 50ch; margin-top: 1.3rem; }
 
