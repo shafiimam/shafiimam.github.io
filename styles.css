@@ -133,10 +133,13 @@ body > *:not(#shader):not(.grain):not(.loader):not(.cursor) { position: relative
 /* =========================================================
    MARQUEE
    ========================================================= */
-.marquee { border-block: 1px solid var(--line); padding: 1.5rem 0; overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+.marquee { border-block: 1px solid var(--line); padding: clamp(1.6rem, 3vw, 2.4rem) 0; overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
 .marquee__track { display: inline-flex; align-items: center; gap: 2.4rem; white-space: nowrap; animation: scroll-x 38s linear infinite; }
 .marquee__track span { font-family: var(--sans); font-weight: 500; font-size: clamp(1rem, 0.8rem + 0.9vw, 1.6rem); letter-spacing: -0.01em; color: var(--ink); }
 .marquee__track span[aria-hidden] { color: var(--ink-faint); }
+.marquee__track--logos { gap: clamp(2.5rem, 5vw, 5rem); }
+.clogo { height: clamp(24px, 2.6vw, 34px); width: auto; flex: 0 0 auto; object-fit: contain; filter: brightness(0); opacity: 0.48; transition: opacity 0.3s var(--ease); }
+.clogo:hover { opacity: 0.85; }
 @keyframes scroll-x { to { transform: translateX(-50%); } }
 
 /* =========================================================
