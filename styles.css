@@ -248,14 +248,21 @@ article.case:nth-of-type(3) { top: 126px; }
    HOW IT WORKS  (editorial number-rows)
    ========================================================= */
 .process { max-width: var(--maxw); margin: 0 auto; padding: var(--section-y) var(--pad-x); }
-.steps { border-top: 1px solid var(--line); }
-.step { display: grid; grid-template-columns: auto 1fr auto; gap: clamp(1.5rem, 5vw, 5rem); align-items: baseline; padding: clamp(1.8rem, 3.5vw, 3rem) 0; border-bottom: 1px solid var(--line); transition: padding-left 0.45s var(--ease); }
-.step:hover { padding-left: clamp(0.5rem, 1.5vw, 1.4rem); }
-.step__n { font-family: var(--sans); font-weight: 600; font-size: clamp(1.3rem, 1rem + 1.6vw, 2.2rem); color: var(--ink-faint); letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
+.steps { position: relative; }
+.step { position: relative; display: grid; grid-template-columns: auto 1fr auto; gap: clamp(1.5rem, 5vw, 5rem); align-items: center; padding: clamp(1.9rem, 3.6vw, 3.1rem) clamp(0.6rem, 1.5vw, 1.5rem); transition: background 0.4s var(--ease); }
+.step::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 1px; background: var(--line-2); transform: scaleX(0); transform-origin: left; transition: transform 0.9s var(--ease) 0.05s; }
+.step.is-in::before { transform: scaleX(1); }
+.step:last-child { border-bottom: 1px solid var(--line-2); }
+.step:hover { background: var(--bg-2); }
+.step::after { content: "→"; position: absolute; right: clamp(0.6rem, 1.5vw, 1.5rem); top: 50%; transform: translateY(-50%) translateX(-10px); opacity: 0; font-size: 1.5rem; color: var(--ink); transition: opacity 0.35s var(--ease), transform 0.35s var(--ease); pointer-events: none; }
+.step:hover::after { opacity: 1; transform: translateY(-50%) translateX(0); }
+.step__n { font-family: var(--sans); font-weight: 600; font-size: clamp(1.6rem, 1rem + 2.4vw, 3rem); color: var(--ink-faint); letter-spacing: -0.04em; font-variant-numeric: tabular-nums; transition: color 0.35s var(--ease); }
+.step:hover .step__n { color: var(--ink); }
 .step__body { max-width: 660px; }
 .step__body h3 { font-size: clamp(1.7rem, 1rem + 2.6vw, 3.2rem); color: var(--ink); font-weight: 600; margin-bottom: 0.7rem; letter-spacing: -0.035em; }
 .step__body p { color: var(--ink-soft); max-width: 54ch; }
-.step__meta { color: var(--ink-faint); white-space: nowrap; align-self: center; }
+.step__meta { color: var(--ink-faint); white-space: nowrap; align-self: center; transition: opacity 0.35s var(--ease), transform 0.35s var(--ease); }
+.step:hover .step__meta { opacity: 0; transform: translateX(12px); }
 
 /* =========================================================
    TESTIMONIALS  (editorial quote-rows)
@@ -368,6 +375,7 @@ article.case:nth-of-type(3) { top: 126px; }
   .hero__title .line > span, .arc-hero__title .line > span { opacity: 1 !important; transform: none !important; }
   .case { position: static; box-shadow: none; }
   .timeline::after { transform: scaleY(1); }
+  .step::before { transform: scaleX(1); }
 }
 
 /* focus */
