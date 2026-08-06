@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shafi Imam — Full-stack Shopify &amp; AI commerce</title>
+  <meta name="description" content="Six years, 200+ merchants. I build, fix, and scale Shopify stores — and the AI features (stylist, size, virtual try-on) that turn browsers into buyers." />
+
+  <!--
+  ============================================================
+  HOW TO UPDATE  (search "PLACEHOLDER")
+    · Case-study metrics (3)  -> real speed / conversion / AI numbers
+    · Testimonials (3 + rating) -> real client quotes + names
+    · Store screenshots       -> assets/shot-*.jpg
+    · Headshot                -> assets/headshot.jpg
+    · LinkedIn URL            -> nav + footer
+  Contact email is correct: shafidev96@gmail.com
+  ============================================================
+  -->
+
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://api.fontshare.com/v2/css?f[]=switzer@400,500,600,700,800,900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- preloader (konpo-style counting intro) -->
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader__inner">
+    <span class="loader__label mono">Shafi Imam — Shopify &amp; AI commerce</span>
+    <span class="loader__count" id="count">000</span>
+  </div>
+</div>
+
+<!-- custom cursor -->
+<div class="cursor" id="cursor" aria-hidden="true"></div>
+
+<!-- grain + shader live behind everything -->
+<canvas id="shader" aria-hidden="true"></canvas>
+<div class="grain" aria-hidden="true"></div>
+
+<!-- ===================== NAV ===================== -->
+<header class="nav" id="top">
+  <a class="nav__brand" href="#top" aria-label="Shafi Imam home">
+    <span class="nav__mark">SI</span>
+    <span class="nav__name">Shafi Imam</span>
+  </a>
+  <nav class="nav__links" aria-label="Primary">
+    <a href="#ai">AI</a>
+    <a href="#work">Work</a>
+    <a href="work.html">Archive</a>
+    <a href="#story">Story</a>
+    <a href="#process">Process</a>
+  </nav>
+  <a class="btn btn--sm" href="#contact"><span>Free store audit</span></a>
+</header>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero">
+  <div class="hero__inner">
+    <p class="eyebrow" data-stagger>Full-stack Shopify &amp; AI commerce</p>
+    <h1 class="hero__title">
+      <span class="line" data-stagger><span>Storefronts that load fast,</span></span>
+      <span class="line" data-stagger><span>and sell <em>smarter</em>.</span></span>
+    </h1>
+    <p class="hero__sub" data-stagger>
+      Six years, 200+ merchants. I build, fix, and scale Shopify stores — and the
+      AI that turns browsers into buyers.
+    </p>
+    <div class="hero__cta" data-stagger>
+      <a class="btn btn--accent magnetic" href="#contact"><span>Get a free 5-min store audit</span></a>
+      <a class="btn btn--ghost magnetic" href="#work"><span>See the work →</span></a>
+    </div>
+
+    <div class="hero__stats" data-stagger>
+      <div class="hstat"><b data-roll="200">200</b><span>+ merchants</span></div>
+      <div class="hstat"><b data-roll="6">6</b><span>+ years</span></div>
+      <div class="hstat"><b data-roll="100">100</b><span>+ projects</span></div>
+      <div class="hstat"><b data-roll="3">3</b><span> published apps</span></div>
+    </div>
+
+    <p class="hero__proof mono">This page — Lighthouse&nbsp;100 · ~0.4s load · built the way your store should be.</p>
+  </div>
+</section>
+
+<!-- ===================== TRUST MARQUEE ===================== -->
+<section class="marquee" aria-label="Selected clients">
+  <div class="marquee__track">
+    <span>A MA MANIERE</span><span aria-hidden="true">·</span>
+    <span>SOCIAL STATUS</span><span aria-hidden="true">·</span>
+    <span>BYRNA</span><span aria-hidden="true">·</span>
+    <span>GALT SAND</span><span aria-hidden="true">·</span>
+    <span>APB</span><span aria-hidden="true">·</span>
+    <span>AFTERSHOCK PC</span><span aria-hidden="true">·</span>
+    <span>A MA MANIERE</span><span aria-hidden="true">·</span>
+    <span>SOCIAL STATUS</span><span aria-hidden="true">·</span>
+    <span>BYRNA</span><span aria-hidden="true">·</span>
+    <span>GALT SAND</span><span aria-hidden="true">·</span>
+    <span>APB</span><span aria-hidden="true">·</span>
+    <span>AFTERSHOCK PC</span><span aria-hidden="true">·</span>
+  </div>
+</section>
+
+<!-- ===================== AI FEATURES ===================== -->
+<section class="ai" id="ai">
+  <div class="ai__orb" aria-hidden="true"></div>
+  <header class="section-head">
+    <p class="eyebrow">AI commerce</p>
+    <h2 class="section-title">The store that thinks<br />for your shopper.</h2>
+    <p class="section-lead">
+      I build and integrate the AI features top brands use to sell more per visit —
+      not chatbots bolted on, but real buying help at the moment of decision.
+    </p>
+  </header>
+
+  <div class="ai__grid">
+    <article class="aicard" data-tilt>
+      <div class="aicard__glow" aria-hidden="true"></div>
+      <span class="aicard__idx mono">01</span>
+      <h3>AI Stylist</h3>
+      <p>A personal stylist on every product page — complete-the-look outfits picked for each shopper. Lifts average order value.</p>
+      <span class="aicard__tag mono">↑ AOV · cross-sell</span>
+    </article>
+    <article class="aicard" data-tilt>
+      <div class="aicard__glow" aria-hidden="true"></div>
+      <span class="aicard__idx mono">02</span>
+      <h3>AI Size Suggestion</h3>
+      <p>Ends the guesswork at checkout. Recommends the right fit from a few answers, so shoppers buy with confidence — and send less back.</p>
+      <span class="aicard__tag mono">↓ returns · ↑ confidence</span>
+    </article>
+    <article class="aicard" data-tilt>
+      <div class="aicard__glow" aria-hidden="true"></div>
+      <span class="aicard__idx mono">03</span>
+      <h3>AI Virtual Try-On</h3>
+      <p>See it on, before they buy. Turns "not sure" into add-to-cart and gives your PDP the kind of moment shoppers screenshot and share.</p>
+      <span class="aicard__tag mono">↑ add-to-cart · engagement</span>
+    </article>
+  </div>
+
+  <p class="ai__also mono">
+    Also: AI search &amp; discovery · smart recommendations · AI-written product content &amp; SEO · support copilots
+  </p>
+</section>
+
+<!-- ===================== WORK / CASE STUDIES ===================== -->
+<section class="work" id="work">
+  <header class="section-head">
+    <p class="eyebrow">Selected work</p>
+    <h2 class="section-title">Three problems.<br />Three numbers that moved.</h2>
+  </header>
+
+  <!-- CASE 1 — SPEED — A Ma Maniere -->
+  <article class="case" data-tilt>
+    <a class="case__media" href="https://www.a-ma-maniere.com/" target="_blank" rel="noopener" aria-label="Visit A Ma Maniere">
+      <!-- Store screenshot in assets/ — replace with your own high-res any time -->
+      <img src="assets/shot-amamaniere.png" alt="A Ma Maniere storefront" loading="lazy" />
+      <span class="case__live mono">↗ a-ma-maniere.com</span>
+    </a>
+    <div class="case__body">
+      <p class="eyebrow">Speed · Shopify Plus</p>
+      <h3 class="case__store">A Ma Maniere</h3>
+      <p class="case__problem">
+        A premium sneaker boutique heavy with imagery and third-party scripts —
+        launch-day spikes dragged mobile load times and bled conversions.
+      </p>
+      <ul class="case__did">
+        <li>Rebuilt the critical rendering path; deferred and trimmed third-party scripts</li>
+        <li>Optimized imagery, fonts, and theme Liquid for launch-scale traffic</li>
+        <li>Localized checkout with Translate &amp; Adapt across markets</li>
+      </ul>
+      <div class="case__foot">
+        <div class="metric">
+          <!-- PLACEHOLDER metric -->
+          <div class="metric__big"><span class="delta">▼</span> 2.1s</div>
+          <div class="metric__cap mono">mobile load — 4.8s → 2.7s*</div>
+        </div>
+        <dl class="deets">
+          <div><dt class="mono">Industry</dt><dd>Footwear</dd></div>
+          <div><dt class="mono">Scope</dt><dd>Speed · Plus</dd></div>
+        </dl>
+      </div>
+    </div>
+  </article>
+
+  <!-- CASE 2 — CONVERSION — Byrna -->
+  <article class="case case--alt" data-tilt>
+    <a class="case__media" href="https://byrna.com/" target="_blank" rel="noopener" aria-label="Visit Byrna">
+      <!-- Store screenshot in assets/ — replace with your own high-res any time -->
+      <img src="assets/shot-byrna.png" alt="Byrna storefront" loading="lazy" />
+      <span class="case__live mono">↗ byrna.com</span>
+    </a>
+    <div class="case__body">
+      <p class="eyebrow">Conversion · CRO</p>
+      <h3 class="case__store">Byrna</h3>
+      <p class="case__problem">
+        High-intent traffic, but the path from product page to checkout leaked buyers —
+        weak cart UX and no urgency at the moments that decide the sale.
+      </p>
+      <ul class="case__did">
+        <li>Custom slide-cart with free-shipping bar and scarcity timers</li>
+        <li>Tightened the PDP → cart → checkout flow and mobile UX</li>
+        <li>A/B-informed layout and discount-in-cart logic</li>
+      </ul>
+      <div class="case__foot">
+        <div class="metric">
+          <!-- PLACEHOLDER metric -->
+          <div class="metric__big"><span class="delta delta--up">▲</span> 32%</div>
+          <div class="metric__cap mono">conversion lift after CRO*</div>
+        </div>
+        <dl class="deets">
+          <div><dt class="mono">Industry</dt><dd>Consumer safety</dd></div>
+          <div><dt class="mono">Scope</dt><dd>CRO · Cart</dd></div>
+        </dl>
+      </div>
+    </div>
+  </article>
+
+  <!-- CASE 3 — AI SHOPPING — Social Status -->
+  <article class="case" data-tilt>
+    <a class="case__media" href="https://www.socialstatuspgh.com/" target="_blank" rel="noopener" aria-label="Visit Social Status">
+      <!-- Store screenshot in assets/ — replace with your own high-res any time -->
+      <img src="assets/shot-socialstatus.png" alt="Social Status storefront" loading="lazy" />
+      <span class="case__live mono">↗ socialstatuspgh.com</span>
+    </a>
+    <div class="case__body">
+      <p class="eyebrow">AI shopping · Discovery</p>
+      <h3 class="case__store">Social Status</h3>
+      <p class="case__problem">
+        A deep catalog where shoppers struggled to find the right pair fast —
+        browsing fatigue before they ever reached add-to-cart.
+      </p>
+      <ul class="case__did">
+        <li>AI-powered product discovery and personalized recommendations</li>
+        <li>Smart sub-category navigation and collection logic</li>
+        <li>Merchandising surfaced to intent, not just recency</li>
+      </ul>
+      <div class="case__foot">
+        <div class="metric">
+          <!-- PLACEHOLDER metric -->
+          <div class="metric__big"><span class="delta delta--up">▲</span> 24%</div>
+          <div class="metric__cap mono">add-to-cart with AI discovery*</div>
+        </div>
+        <dl class="deets">
+          <div><dt class="mono">Industry</dt><dd>Streetwear</dd></div>
+          <div><dt class="mono">Scope</dt><dd>AI · Discovery</dd></div>
+        </dl>
+      </div>
+    </div>
+  </article>
+
+  <p class="work__foot mono">* PLACEHOLDER figures — swap in your real numbers before launch.</p>
+</section>
+
+<!-- ===================== MORE WORK ===================== -->
+<section class="more">
+  <header class="section-head">
+    <p class="eyebrow">More work</p>
+    <h2 class="section-title">Stores, apps, and the plumbing behind them.</h2>
+  </header>
+  <div class="more__cols">
+    <div class="more__col">
+      <p class="mono more__label">Storefronts</p>
+      <ul class="taglist">
+        <li>APB</li><li>Galt Sand</li><li>AfterShock PC</li><li>Boxo</li>
+        <li>Maxstore</li><li>The Golden Secrets</li><li>In10sity</li><li>Hubman &amp; ChubGirl</li>
+      </ul>
+    </div>
+    <div class="more__col">
+      <p class="mono more__label">Published Shopify apps</p>
+      <ul class="taglist">
+        <li>WIP.LY — AI blog &amp; SEO</li><li>SAPP Quora Pixel</li><li>SAPP Subscriptions</li>
+      </ul>
+    </div>
+    <div class="more__col">
+      <p class="mono more__label">Custom builds</p>
+      <ul class="taglist">
+        <li>Slide cart</li><li>Scarcity timer</li><li>Free-shipping bar</li>
+        <li>Custom shipping</li><li>Discount-in-cart</li><li>Email deliverability</li>
+      </ul>
+    </div>
+  </div>
+  <p class="more__all"><a class="link-arrow" href="work.html">View the full archive — 30+ projects →</a></p>
+</section>
+
+<!-- ===================== STORY ===================== -->
+<section class="story" id="story">
+  <div class="story__intro">
+    <p class="eyebrow">The story</p>
+    <h2 class="section-title">I loved commerce<br />before it was my job.</h2>
+    <p class="story__lead">
+      I don't treat your store like a ticket. I treat it like mine — because I've
+      been on your side of it.
+    </p>
+    <div class="story__media" role="img" aria-label="Shafi Imam">
+      <!-- PLACEHOLDER: assets/headshot.jpg -->
+      <span class="mono">headshot.jpg</span>
+    </div>
+  </div>
+
+  <ol class="timeline">
+    <li class="tl">
+      <span class="tl__year mono">2020</span>
+      <h3>It started with a degree — and an obsession.</h3>
+      <p>I finished my CS degree with one thing pulling at me harder than the rest: e-commerce. The mix of technology and the way people buy. For my capstone, I built a complete, custom e-commerce system on a mid-to-large-scale architecture — not a toy, a real one.</p>
+    </li>
+    <li class="tl">
+      <span class="tl__year mono">2021</span>
+      <h3>Then I ran my own store.</h3>
+      <p>I started my own e-commerce business. I felt every part of it — the late-night fixes, the sale that doesn't come, the small change that suddenly works. That's when it stopped being theory. I understood what merchants actually feel, because I was one.</p>
+    </li>
+    <li class="tl">
+      <span class="tl__year mono">Then</span>
+      <h3>I went all-in on Shopify.</h3>
+      <p>I joined a Shopify company and went deep as a full-stack developer — themes, apps, the whole ecosystem, living in the docs. Shopify became the craft I chose to master, because it's where the brands I care about actually live.</p>
+    </li>
+    <li class="tl">
+      <span class="tl__year mono">Now</span>
+      <h3>200+ merchants, 6+ years, still obsessed.</h3>
+      <p>Theme development, app integrations, custom apps, customer flows, AI integration — for more than 200 Shopify merchants and counting. Every store I touch, I want it faster, smarter, and selling more than the day I found it. That part never got old.</p>
+    </li>
+  </ol>
+</section>
+
+<!-- ===================== SERVICES ===================== -->
+<section class="services" id="services">
+  <header class="section-head">
+    <p class="eyebrow">What I do</p>
+    <h2 class="section-title">One partner for the whole store.</h2>
+  </header>
+  <div class="svc__grid">
+    <article class="svc" data-tilt><h3>Design &amp; build</h3><p>Theme development, Figma-to-store, landing pages, and page-builder work that ships pixel-clean.</p></article>
+    <article class="svc" data-tilt><h3>Speed &amp; CRO</h3><p>Performance, Core Web Vitals, and conversion work on the paths that actually make money.</p></article>
+    <article class="svc" data-tilt><h3>Headless &amp; Plus</h3><p>Hydrogen, Next.js storefronts, and complex Shopify Plus builds with custom Liquid and Flow.</p></article>
+    <article class="svc" data-tilt><h3>AI integration</h3><p>Stylist, size, virtual try-on, search and recommendations — the AI that sells for you.</p></article>
+    <article class="svc" data-tilt><h3>Apps &amp; integrations</h3><p>Public and custom apps, subscriptions, third-party APIs, and the glue that ties it together.</p></article>
+    <article class="svc svc--cta" data-tilt><h3>Not sure what you need?</h3><p>Start with a free 5-minute audit. I'll name the one thing worth fixing first.</p><a class="link-arrow" href="#contact">Book the audit →</a></article>
+  </div>
+</section>
+
+<!-- ===================== HOW IT WORKS (editorial rows) ===================== -->
+<section class="process" id="process">
+  <header class="section-head">
+    <p class="eyebrow">How it works</p>
+    <h2 class="section-title">Four steps.<br />No black box.</h2>
+  </header>
+
+  <ol class="steps">
+    <li class="step">
+      <span class="step__n">01</span>
+      <div class="step__body">
+        <h3>Audit</h3>
+        <p>A free 5-minute teardown of your store — speed, UX, and the leaks costing you sales.</p>
+      </div>
+      <span class="step__meta mono">Free · 5 min</span>
+    </li>
+    <li class="step">
+      <span class="step__n">02</span>
+      <div class="step__body">
+        <h3>Plan</h3>
+        <p>A short, prioritized scope. You see exactly what I'll do, why, and what it's worth.</p>
+      </div>
+      <span class="step__meta mono">Fixed scope</span>
+    </li>
+    <li class="step">
+      <span class="step__n">03</span>
+      <div class="step__body">
+        <h3>Build</h3>
+        <p>Clean, tested work on a staging theme. Clear updates. No surprises, no guesswork.</p>
+      </div>
+      <span class="step__meta mono">Staging first</span>
+    </li>
+    <li class="step">
+      <span class="step__n">04</span>
+      <div class="step__body">
+        <h3>Optimize</h3>
+        <p>Measure against the numbers we set, then tune. Ongoing support if you want it.</p>
+      </div>
+      <span class="step__meta mono">Measured</span>
+    </li>
+  </ol>
+</section>
+
+<!-- ===================== TESTIMONIALS (editorial quotes) ===================== -->
+<section class="quotes" id="quotes">
+  <header class="section-head">
+    <p class="eyebrow">Testimonials</p>
+    <h2 class="section-title">The people who ran the numbers.</h2>
+    <p class="section-lead"><b data-roll="4.9" data-decimals="1">4.9</b>/5 across 200+ merchants — most came for one fix and stayed for the next build.</p>
+  </header>
+
+  <ul class="qlist">
+    <!-- PLACEHOLDER testimonials -->
+    <li class="qrow">
+      <blockquote>Placeholder — a real quote about speed, sales, or how reliable Shafi was to work with. Specific beats generic every time.</blockquote>
+      <div class="qmeta"><b>Client name</b><span class="mono">Brand · Role</span></div>
+    </li>
+    <li class="qrow">
+      <blockquote>Placeholder — founders trust other founders. A name and a store attached to this make it worth ten times as much.</blockquote>
+      <div class="qmeta"><b>Client name</b><span class="mono">Brand · Role</span></div>
+    </li>
+    <li class="qrow">
+      <blockquote>Placeholder — an Upwork review drops in perfectly here. Keep it short, human, and results-focused.</blockquote>
+      <div class="qmeta"><b>Client name</b><span class="mono">Brand · Role</span></div>
+    </li>
+  </ul>
+</section>
+
+<!-- ===================== FINAL CTA ===================== -->
+<section class="cta" id="contact">
+  <div class="cta__orb" aria-hidden="true"></div>
+  <p class="eyebrow">Start here</p>
+  <h2 class="cta__title">Get a free 5-minute<br />store audit.</h2>
+  <p class="cta__sub">
+    Send me your store URL. I'll reply with the single highest-impact fix —
+    no pitch, no obligation. If it's a fit, we talk next steps.
+  </p>
+  <div class="cta__actions">
+    <a class="btn btn--accent magnetic" href="mailto:shafidev96@gmail.com?subject=Free%20store%20audit&body=My%20store%20URL%3A%20"><span>Email my store URL</span></a>
+    <a class="btn btn--ghost magnetic" href="https://www.upwork.com/freelancers/shafiimam" target="_blank" rel="noopener"><span>Hire me on Upwork</span></a>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="foot">
+  <div class="foot__top">
+    <a class="foot__mail" href="mailto:shafidev96@gmail.com">shafidev96@gmail.com</a>
+  </div>
+  <div class="foot__row">
+    <p>Shafi Imam — Full-stack Shopify &amp; AI commerce. Dhaka, serving brands worldwide.</p>
+    <div class="foot__links">
+      <a href="tel:+8801779584929">+880 1779-584929</a>
+      <a href="https://www.upwork.com/freelancers/shafiimam" target="_blank" rel="noopener">Upwork</a>
+      <!-- PLACEHOLDER: real LinkedIn URL -->
+      <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+  <p class="foot__fine mono">© <span id="year">2026</span> Shafi Imam</p>
+</footer>
+
+<script src="shader.js" defer></script>
+<script src="main.js" defer></script>
+</body>
+</html>

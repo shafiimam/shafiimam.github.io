@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Work — Shafi Imam</title>
+  <meta name="description" content="The full archive: Shopify stores, published apps, integrations, and custom builds shipped for 200+ merchants over six years." />
+
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://api.fontshare.com/v2/css?f[]=switzer@400,500,600,700,800,900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader__inner">
+    <span class="loader__label mono">Shafi Imam — Archive</span>
+    <span class="loader__count" id="count">000</span>
+  </div>
+</div>
+<div class="cursor" id="cursor" aria-hidden="true"></div>
+<canvas id="shader" aria-hidden="true"></canvas>
+<div class="grain" aria-hidden="true"></div>
+
+<!-- NAV -->
+<header class="nav" id="top">
+  <a class="nav__brand" href="index.html" aria-label="Shafi Imam home">
+    <span class="nav__mark">SI</span>
+    <span class="nav__name">Shafi Imam</span>
+  </a>
+  <nav class="nav__links" aria-label="Primary">
+    <a href="index.html#ai">AI</a>
+    <a href="work.html">Work</a>
+    <a href="index.html#story">Story</a>
+    <a href="index.html#process">Process</a>
+  </nav>
+  <a class="btn btn--sm" href="index.html#contact"><span>Free store audit</span></a>
+</header>
+
+<!-- HEADER -->
+<section class="arc-hero">
+  <p class="eyebrow" data-stagger>Archive</p>
+  <h1 class="arc-hero__title">
+    <span class="line" data-stagger><span>All the work.</span></span>
+  </h1>
+  <p class="arc-hero__sub" data-stagger>
+    Six years, 200+ merchants. Stores, published apps, integrations, and the custom
+    builds behind them. A living index — <a class="link-arrow" href="index.html#work">see the featured case studies →</a>
+  </p>
+</section>
+
+<!-- STORES -->
+<section class="archive">
+  <header class="acat__head">
+    <p class="mono acat__label">Storefronts</p>
+    <span class="mono acat__count">13</span>
+  </header>
+  <ul class="arows">
+    <li class="arow"><span class="arow__name"><a href="https://www.a-ma-maniere.com/" target="_blank" rel="noopener">A Ma Maniere <span class="arow__go">↗</span></a></span><span class="arow__tags mono">Shopify Plus · Gift Card · Flow</span></li>
+    <li class="arow"><span class="arow__name"><a href="https://www.aftershockpc.com" target="_blank" rel="noopener">AfterShock PC <span class="arow__go">↗</span></a></span><span class="arow__tags mono">Headless · Plus · Custom code</span></li>
+    <li class="arow"><span class="arow__name"><a href="https://www.socialstatuspgh.com/" target="_blank" rel="noopener">Social Status <span class="arow__go">↗</span></a></span><span class="arow__tags mono">Theme · AI discovery</span></li>
+    <li class="arow"><span class="arow__name"><a href="https://byrna.com/" target="_blank" rel="noopener">Byrna <span class="arow__go">↗</span></a></span><span class="arow__tags mono">CRO · Cart · Custom</span></li>
+    <li class="arow"><span class="arow__name"><a href="https://galtsand.com" target="_blank" rel="noopener">Galt Sand <span class="arow__go">↗</span></a></span><span class="arow__tags mono">Theme · Custom</span></li>
+    <li class="arow"><span class="arow__name">APB</span><span class="arow__tags mono">Theme development</span></li>
+    <li class="arow"><span class="arow__name"><a href="https://www.boxo.no" target="_blank" rel="noopener">Boxo <span class="arow__go">↗</span></a></span><span class="arow__tags mono">Rebuy · Slide cart · Discount API</span></li>
+    <li class="arow"><span class="arow__name"><a href="https://www.maxstore.no" target="_blank" rel="noopener">Maxstore <span class="arow__go">↗</span></a></span><span class="arow__tags mono">Loop Subscriptions · Custom</span></li>
+    <li class="arow"><span class="arow__name"><a href="https://groomingmore.com" target="_blank" rel="noopener">Grooming More <span class="arow__go">↗</span></a></span><span class="arow__tags mono">Replo · Page builder</span></li>
+    <li class="arow"><span class="arow__name"><a href="https://in10sity.shop" target="_blank" rel="noopener">In10sity <span class="arow__go">↗</span></a></span><span class="arow__tags mono">Checkout Champ · Funnel</span></li>
+    <li class="arow"><span class="arow__name"><a href="https://www.thegoldensecrets.com" target="_blank" rel="noopener">The Golden Secrets <span class="arow__go">↗</span></a></span><span class="arow__tags mono">Cosmetics · Theme</span></li>
+    <li class="arow"><span class="arow__name"><a href="https://hubmanchubgirl.store" target="_blank" rel="noopener">Hubman &amp; ChubGirl <span class="arow__go">↗</span></a></span><span class="arow__tags mono">Theme · Custom feature</span></li>
+    <li class="arow"><span class="arow__name">SAGO</span><span class="arow__tags mono">Theme development</span></li>
+  </ul>
+</section>
+
+<!-- APPS -->
+<section class="archive">
+  <header class="acat__head">
+    <p class="mono acat__label">Published Shopify apps</p>
+    <span class="mono acat__count">3</span>
+  </header>
+  <ul class="arows">
+    <li class="arow"><span class="arow__name">WIP.LY — Scratch Card</span><span class="arow__tags mono">AI · Blog · SEO</span></li>
+    <li class="arow"><span class="arow__name">SAPP Quora Pixel</span><span class="arow__tags mono">Pixel · Tracking</span></li>
+    <li class="arow"><span class="arow__name">SAPP Subscriptions</span><span class="arow__tags mono">Recurring payments</span></li>
+  </ul>
+</section>
+
+<!-- INTEGRATIONS -->
+<section class="archive">
+  <header class="acat__head">
+    <p class="mono acat__label">Integrations &amp; features</p>
+    <span class="mono acat__count">8</span>
+  </header>
+  <ul class="arows">
+    <li class="arow"><span class="arow__name">Rebuy Personalisation Engine</span><span class="arow__tags mono">Personalization</span></li>
+    <li class="arow"><span class="arow__name">Loop Subscriptions</span><span class="arow__tags mono">Subscriptions</span></li>
+    <li class="arow"><span class="arow__name">Replo</span><span class="arow__tags mono">Page builder</span></li>
+    <li class="arow"><span class="arow__name">Checkout Champ</span><span class="arow__tags mono">Funnel builder</span></li>
+    <li class="arow"><span class="arow__name">Translate &amp; Adapt</span><span class="arow__tags mono">Localization</span></li>
+    <li class="arow"><span class="arow__name">Powerful Form Builder</span><span class="arow__tags mono">Forms · UI/UX</span></li>
+    <li class="arow"><span class="arow__name">Gift Card Factory</span><span class="arow__tags mono">Gift cards</span></li>
+    <li class="arow"><span class="arow__name">Shopify Flow</span><span class="arow__tags mono">Automation · Orders</span></li>
+  </ul>
+</section>
+
+<!-- CUSTOM -->
+<section class="archive">
+  <header class="acat__head">
+    <p class="mono acat__label">Custom development</p>
+    <span class="mono acat__count">7</span>
+  </header>
+  <ul class="arows">
+    <li class="arow"><span class="arow__name">Slide cart</span><span class="arow__tags mono">BNPL · Free-shipping bar</span></li>
+    <li class="arow"><span class="arow__name">Scarcity timer</span><span class="arow__tags mono">Urgency</span></li>
+    <li class="arow"><span class="arow__name">Free shipping bar</span><span class="arow__tags mono">Cart</span></li>
+    <li class="arow"><span class="arow__name">Custom shipping method</span><span class="arow__tags mono">Shipping upsell · Plus</span></li>
+    <li class="arow"><span class="arow__name">Discount in cart</span><span class="arow__tags mono">Discount API</span></li>
+    <li class="arow"><span class="arow__name">Email deliverability optimization</span><span class="arow__tags mono">Deliverability · Spam fix</span></li>
+    <li class="arow"><span class="arow__name">Custom sub-category</span><span class="arow__tags mono">Collections · Navigation</span></li>
+  </ul>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contact">
+  <div class="cta__orb" aria-hidden="true"></div>
+  <p class="eyebrow">Start here</p>
+  <h2 class="cta__title">Your store could<br />be next.</h2>
+  <p class="cta__sub">Send me your store URL. I'll reply with the single highest-impact fix — no pitch, no obligation.</p>
+  <div class="cta__actions">
+    <a class="btn btn--accent magnetic" href="mailto:shafidev96@gmail.com?subject=Free%20store%20audit&body=My%20store%20URL%3A%20"><span>Email my store URL</span></a>
+    <a class="btn btn--ghost magnetic" href="index.html"><span>Back to home</span></a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="foot">
+  <div class="foot__top"><a class="foot__mail" href="mailto:shafidev96@gmail.com">shafidev96@gmail.com</a></div>
+  <div class="foot__row">
+    <p>Shafi Imam — Full-stack Shopify &amp; AI commerce. Dhaka, serving brands worldwide.</p>
+    <div class="foot__links">
+      <a href="tel:+8801779584929">+880 1779-584929</a>
+      <a href="https://www.upwork.com/freelancers/shafiimam" target="_blank" rel="noopener">Upwork</a>
+      <!-- PLACEHOLDER: real LinkedIn URL -->
+      <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+  <p class="foot__fine mono">© <span id="year">2026</span> Shafi Imam</p>
+</footer>
+
+<script src="shader.js" defer></script>
+<script src="main.js" defer></script>
+</body>
+</html>
