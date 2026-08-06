@@ -60,7 +60,7 @@
 
     // scroll reveals
     const revealSel = [
-      ".aicard", ".case", ".svc", ".tl", ".step", ".more__col",
+      ".aicard", ".svc", ".tl", ".step", ".more__col",
       ".section-head", ".qrow", ".story__media", ".story__intro"
     ];
     const nodes = Array.from(document.querySelectorAll(revealSel.join(",")));
@@ -146,5 +146,26 @@
       });
       btn.addEventListener("pointerleave", () => { btn.style.transform = ""; });
     });
+  }
+
+  // ---- timeline scroll-fill (line pulls up as you scroll) ----------------
+  if (!reduced) {
+    const tl = document.querySelector(".timeline");
+    if (tl) {
+      let ticking = false;
+      function updateTl() {
+        const r = tl.getBoundingClientRect();
+        const ref = window.innerHeight * 0.55;
+        const p = (ref - r.top) / r.height;
+        tl.style.setProperty("--tl-progress", Math.max(0, Math.min(1, p)).toFixed(3));
+        ticking = false;
+      }
+      function onScroll() {
+        if (!ticking) { ticking = true; requestAnimationFrame(updateTl); }
+      }
+      window.addEventListener("scroll", onScroll, { passive: true });
+      window.addEventListener("resize", onScroll, { passive: true });
+      updateTl();
+    }
   }
 })();
