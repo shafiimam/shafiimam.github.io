@@ -168,4 +168,81 @@
       updateTl();
     }
   }
+
+  // ---- interactive dot field + title parallax ----------------------------
+  document.querySelectorAll("[data-dotfield]").forEach((field) => {
+    const canvas = field.querySelector(".dotfield__canvas");
+    const title = field.querySelector("[data-parallax]");
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const GAP = 26, RADIUS = 150, MAXR = 4.6, BASER = 1.1, BASE_ALPHA = 0.14;
+    let dots = [], w = 0, h = 0;
+    let mx = -9999, my = -9999, tmx = -9999, tmy = -9999;
+    let active = false, raf = null;
+
+    function build() {
+      const rect = field.getBoundingClientRect();
+      w = rect.width; h = rect.height;
+      canvas.width = Math.round(w * dpr); canvas.height = Math.round(h * dpr);
+      canvas.style.width = w + "px"; canvas.style.height = h + "px";
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      dots = [];
+      for (let y = GAP / 2; y < h; y += GAP)
+        for (let x = GAP / 2; x < w; x += GAP) dots.push({ x: x, y: y, r: BASER });
+    }
+    function dot(d, r, a) {
+      ctx.beginPath();
+      ctx.arc(d.x, d.y, r, 0, Math.PI * 2);
+      ctx.fillStyle = "rgba(17,17,16," + a + ")";
+      ctx.fill();
+    }
+    function drawStatic() {
+      ctx.clearRect(0, 0, w, h);
+      for (let i = 0; i < dots.length; i++) dot(dots[i], BASER, BASE_ALPHA);
+    }
+    function frame() {
+      mx += (tmx - mx) * 0.18;
+      my += (tmy - my) * 0.18;
+      ctx.clearRect(0, 0, w, h);
+      for (let i = 0; i < dots.length; i++) {
+        const d = dots[i];
+        const dx = d.x - mx, dy = d.y - my;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        let tr = BASER, a = BASE_ALPHA;
+        if (dist < RADIUS) {
+          const f = 1 - dist / RADIUS;
+          tr = BASER + f * (MAXR - BASER);
+          a = BASE_ALPHA + f * 0.7;
+        }
+        d.r += (tr - d.r) * 0.2;
+        dot(d, d.r, a.toFixed(3));
+      }
+      const settled = Math.abs(tmx - mx) < 0.5 && Math.abs(tmy - my) < 0.5;
+      if (!active && settled) { raf = null; drawStatic(); return; }
+      raf = requestAnimationFrame(frame);
+    }
+    function kick() { if (!raf) raf = requestAnimationFrame(frame); }
+
+    build(); drawStatic();
+
+    if (!reduced) {
+      field.addEventListener("pointermove", (e) => {
+        const rect = field.getBoundingClientRect();
+        tmx = e.clientX - rect.left; tmy = e.clientY - rect.top;
+        active = true; kick();
+        if (title) {
+          const px = tmx / w - 0.5, py = tmy / h - 0.5;
+          title.style.transform = "translate(" + (px * 42).toFixed(1) + "px," + (py * 14).toFixed(1) + "px)";
+        }
+      });
+      field.addEventListener("pointerleave", () => {
+        active = false; tmx = -9999; tmy = -9999;
+        if (title) title.style.transform = "";
+        kick();
+      });
+    }
+    let rt;
+    window.addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(() => { build(); drawStatic(); }, 150); }, { passive: true });
+  });
 })();
