@@ -179,6 +179,8 @@
     const GAP = 26, RADIUS = 150, MAXR = 4.6, BASER = 1.1, BASE_ALPHA = 0.14;
     let dots = [], w = 0, h = 0;
     let mx = -9999, my = -9999, tmx = -9999, tmy = -9999;
+    let ttx = 0, tty = 0, tlx = 0, tly = 0;
+    const AMPX = 180, AMPY = 70;
     let active = false, raf = null;
 
     function build() {
@@ -204,6 +206,10 @@
     function frame() {
       mx += (tmx - mx) * 0.18;
       my += (tmy - my) * 0.18;
+      if (title) {
+        tlx += (ttx - tlx) * 0.12; tly += (tty - tly) * 0.12;
+        title.style.transform = "translate(" + tlx.toFixed(1) + "px," + tly.toFixed(1) + "px)";
+      }
       ctx.clearRect(0, 0, w, h);
       for (let i = 0; i < dots.length; i++) {
         const d = dots[i];
@@ -218,7 +224,7 @@
         d.r += (tr - d.r) * 0.2;
         dot(d, d.r, a.toFixed(3));
       }
-      const settled = Math.abs(tmx - mx) < 0.5 && Math.abs(tmy - my) < 0.5;
+      const settled = Math.abs(tmx - mx) < 0.5 && Math.abs(tmy - my) < 0.5 && Math.abs(ttx - tlx) < 0.3 && Math.abs(tty - tly) < 0.3;
       if (!active && settled) { raf = null; drawStatic(); return; }
       raf = requestAnimationFrame(frame);
     }
@@ -233,12 +239,12 @@
         active = true; kick();
         if (title) {
           const px = tmx / w - 0.5, py = tmy / h - 0.5;
-          title.style.transform = "translate(" + (px * 42).toFixed(1) + "px," + (py * 14).toFixed(1) + "px)";
+          ttx = px * AMPX; tty = py * AMPY;
         }
       });
       field.addEventListener("pointerleave", () => {
         active = false; tmx = -9999; tmy = -9999;
-        if (title) title.style.transform = "";
+        ttx = 0; tty = 0;
         kick();
       });
     }
